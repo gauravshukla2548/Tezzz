@@ -50,3 +50,11 @@ resource "azurerm_network_interface" "nic_name" {
     private_ip_address_allocation = "Dynamic"
   }
 }
+
+resource "azurerm_public_ip" "pub-ip_name" {
+  name                = "ShikhaPublicIP"
+  location            = azurerm_resource_group.rg_name.location
+  resource_group_name = azurerm_resource_group.rg_name.name
+  allocation_method   = "Dynamic"
+  
+}
