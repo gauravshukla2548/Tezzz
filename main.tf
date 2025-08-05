@@ -7,6 +7,13 @@ terraform {
 }
 
   }
+
+ backend "azurerm" {
+    resource_group_name  = "ga_rg"
+    storage_account_name = "backendga"
+    container_name       = "tfstatefile"
+    key                  = "new"
+}
 }
 
 
