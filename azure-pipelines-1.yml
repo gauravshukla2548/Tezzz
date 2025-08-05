@@ -18,6 +18,7 @@ steps:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/Tezzz'
+    backendServiceArm: 'Newaz'
     backendAzureRmStorageAccountName: 'backendga'
     backendAzureRmContainerName: 'tfstatefile'
     backendAzureRmKey: 'new'
