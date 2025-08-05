@@ -14,3 +14,13 @@ steps:
   inputs:
     terraformVersion: '1.5.7' 
 
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/tezzz'
+    backendServiceArm: 'Newaz'
+    backendAzureRmStorageAccountName: 'backendga'
+    backendAzureRmContainerName: 'tfstatefile'
+    backendAzureRmKey: 'new'
+
