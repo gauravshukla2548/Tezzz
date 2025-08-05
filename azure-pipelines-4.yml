@@ -14,20 +14,3 @@ steps:
   inputs:
     terraformVersion: '1.5.7' 
 
-- task: TerraformTask@5
-  inputs:
-    provider: 'azurerm'
-    command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/tezzz'
-    backendServiceArm: 'Newaz'
-    backendAzureRmStorageAccountName: 'backendga'
-    backendAzureRmContainerName: 'tfstatefile'
-    backendAzureRmKey: 'new'
-
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
