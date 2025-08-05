@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: Gaurav
 
 steps:
 - task: TerraformInstaller@1
