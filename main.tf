@@ -8,6 +8,15 @@ terraform {
 
   }
 
+terraform {
+  backend "azurerm" {
+     resource_group_name      = "shikha"
+    storage_account_name = "storageaccountname"                                 # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
+    container_name       = "gaurav"                                  # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
+    key                  = "new.tfstate"                   # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
+  }
+}
+
 
 }
 
