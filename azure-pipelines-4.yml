@@ -12,10 +12,6 @@ pool:
 steps:
 
 
-- script: |
-    choco install terraform --version=1.5.7 -y
-  displayName: 'Install Terraform'
-
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
