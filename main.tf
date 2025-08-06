@@ -8,39 +8,28 @@ terraform {
 
   }
 
+resource "azurerm_resource_group" "shiva" {
+  name     = "shiva-rg"
+  location = "australia east"
+}
+
+
+resource "azurerm_storage_account" "shivastg" {
+  depends_on = [ azurerm_resource_group.shiva ]
+  name                     = "shivastgaccount"
+  resource_group_name      = "shiva-rg"
+  location                 = "australia east"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
 terraform {
   backend "azurerm" {
-     resource_group_name      = "shikha"
-    storage_account_name = "storageaccountname"                                 # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
-    container_name       = "gaurav"                                  # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
-    key                  = "new.tfstate"                   # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
+    resource_group_name  = "shiva-rg"
+    storage_account_name = "shivastgaccount"
+    container_name       = "shiva_container"
+    key                  = "shiva.tfstate"
   }
-}
-
-
-}
-
-
-provider "azurerm" {
-  features {}
-  subscription_id = "3f7c4872-f198-45b7-984d-0ab188b016e6"
-
-}
-
-
-resource "azurerm_resource_group" "rg_name" {
-    name= "Shikha"
-    location="Eastus"
-  
-}
-
-resource "azurerm_storage_account" "example-1" {
-  depends_on = [ azurerm_resource_group.rg_name ]
-  name                     = "storageaccountname"
-  resource_group_name      = "shikha"
-  location                 = "Eastus"
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
 }
 
 
