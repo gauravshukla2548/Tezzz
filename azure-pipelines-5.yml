@@ -15,16 +15,12 @@ steps:
 
 
 
-    
 - task: TerraformTask@5
-  displayName: terraform Init
   inputs:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/tezzz'
-    backendServiceArm: 'Newaz'
-    backendAzureRmStorageAccountName: 'backend'
-    backendAzureRmContainerName: 'tfstatefile'
+    backendAzureRmStorageAccountName: 'storageaccountname'
+    backendAzureRmContainerName: 'gaurav'
     backendAzureRmKey: 'new.tfstate'
-
 
