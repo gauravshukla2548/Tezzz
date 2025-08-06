@@ -10,9 +10,7 @@ pool:
   name: MYJAAN
 
 steps:
-- task: TerraformInstaller@1
-  inputs:
-    terraformVersion: '1.5.7' 
+
 
 - script: |
     choco install terraform --version=1.5.7 -y
