@@ -8,7 +8,7 @@ terraform {
     storage_account_name = "backend"
     container_name       = "tfstatefile"
     key                  = "new.tfstate"
-    use_msi              = true
+   
   }
 
 
