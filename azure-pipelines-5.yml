@@ -18,7 +18,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/tezzz'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
     backendServiceArm: 'Gaurav_pipeline'
     backendAzureRmStorageAccountName: 'backendga'
     backendAzureRmContainerName: 'tfstatefile'
