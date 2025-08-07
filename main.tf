@@ -12,10 +12,12 @@ terraform {
     key                  = "new.tfstate"
    
   }
+provider "azurerm" {
+ features{}
 
 
   }
-
+}
 resource "azurerm_resource_group" "shiva" {
   name     = "shiva-rg"
   location = "australia east"
