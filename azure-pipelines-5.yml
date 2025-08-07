@@ -14,17 +14,15 @@ steps:
     terraformVersion: 'latest'
 
 
-
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/tezzz'
-    backendServiceArm: 'Azure subscription 1(f7d28834-9c52-41d7-adc6-8ae678eef59f)'
-    backendAzureRmStorageAccountName: 'storageaccountname'
-    backendAzureRmContainerName: 'gaurav'
-    backendAzureRmKey: 'new.tfstate'
-
+    backendServiceArm: 'Gaurav_pipeline'
+    backendAzureRmStorageAccountName: 'backendga'
+    backendAzureRmContainerName: 'tfstatefile'
+    backendAzureRmKey: 'new-1.tfstate'
 
 
 
