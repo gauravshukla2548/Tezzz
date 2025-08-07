@@ -32,6 +32,5 @@ resource "azurerm_storage_account" "shivastg" {
 }
 
 
-}
 
 
