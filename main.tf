@@ -4,7 +4,13 @@ terraform {
          source = "hashicorp/azurerm"
           version = "4.37.0"
 
-}
+ backend "azurerm" {
+    storage_account_name = "backend"
+    container_name       = "tfstatefile"
+    key                  = "new.tfstate"
+    use_msi              = true
+  }
+
 
   }
 
@@ -23,13 +29,7 @@ resource "azurerm_storage_account" "shivastg" {
   account_replication_type = "LRS"
 }
 
-terraform {
-  backend "azurerm" {
-    resource_group_name  = "shiva-rg"
-    storage_account_name = "shivastgaccount"
-    container_name       = "shiva_container"
-    key                  = "shiva.tfstate"
-  }
+
 }
 
 
