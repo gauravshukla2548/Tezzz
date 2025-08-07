@@ -3,6 +3,8 @@ terraform {
      azurerm={
          source = "hashicorp/azurerm"
           version = "4.37.0"
+}
+}
 
  backend "azurerm" {
     storage_account_name = "backend"
